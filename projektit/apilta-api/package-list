@@ -1,0 +1,15 @@
+service.tut.pori.apilta
+service.tut.pori.apilta.alerts
+service.tut.pori.apilta.alerts.datatypes
+service.tut.pori.apilta.alerts.reference
+service.tut.pori.apilta.files
+service.tut.pori.apilta.files.datatypes
+service.tut.pori.apilta.sensors
+service.tut.pori.apilta.sensors.datatypes
+service.tut.pori.apilta.sensors.reference
+service.tut.pori.apilta.shock
+service.tut.pori.apilta.shock.datatypes
+service.tut.pori.apilta.utils
+service.tut.pori.fuzzysensors
+service.tut.pori.fuzzysensors.backend
+service.tut.pori.fuzzysensors.frontend
