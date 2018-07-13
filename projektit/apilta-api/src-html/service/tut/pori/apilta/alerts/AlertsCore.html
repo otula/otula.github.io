@@ -152,29 +152,27 @@
 <span class="sourceLineNo">144</span>      alert.setValidUntil(new Date(created.getTime()+ServiceInitializer.getPropertyHandler().getSystemProperties(ApiltaProperties.class).getAlertValidityTime()*60000));<a name="line.144"></a>
 <span class="sourceLineNo">145</span>    }<a name="line.145"></a>
 <span class="sourceLineNo">146</span>    <a name="line.146"></a>
-<span class="sourceLineNo">147</span>    return ServiceInitializer.getDAOHandler().getDAO(AlertsDAO.class).addAlert(alert, validGroupIds); // use valid group ids list to remove possible duplicates in the id list<a name="line.147"></a>
-<span class="sourceLineNo">148</span>    <a name="line.148"></a>
-<span class="sourceLineNo">149</span>  }<a name="line.149"></a>
-<span class="sourceLineNo">150</span><a name="line.150"></a>
-<span class="sourceLineNo">151</span>  /**<a name="line.151"></a>
-<span class="sourceLineNo">152</span>   * <a name="line.152"></a>
-<span class="sourceLineNo">153</span>   * @param authenticatedUser<a name="line.153"></a>
-<span class="sourceLineNo">154</span>   * @param file<a name="line.154"></a>
-<span class="sourceLineNo">155</span>   * @return details for the created file or null on failure (permission denied)<a name="line.155"></a>
-<span class="sourceLineNo">156</span>   * @throws IllegalArgumentException on bad data<a name="line.156"></a>
-<span class="sourceLineNo">157</span>   */<a name="line.157"></a>
-<span class="sourceLineNo">158</span>  public static FileDetails createFile(UserIdentity authenticatedUser, InputStream file) throws IllegalArgumentException {<a name="line.158"></a>
-<span class="sourceLineNo">159</span>    FileDetails details = FilesCore.createFile(file);<a name="line.159"></a>
-<span class="sourceLineNo">160</span>    if(!FileDetails.isValid(details)){<a name="line.160"></a>
-<span class="sourceLineNo">161</span>      throw new IllegalArgumentException("Failed to create file from the given data.");<a name="line.161"></a>
-<span class="sourceLineNo">162</span>    }<a name="line.162"></a>
-<span class="sourceLineNo">163</span>    <a name="line.163"></a>
-<span class="sourceLineNo">164</span>    return details;<a name="line.164"></a>
-<span class="sourceLineNo">165</span>  }<a name="line.165"></a>
-<span class="sourceLineNo">166</span>  <a name="line.166"></a>
-<span class="sourceLineNo">167</span>  //TODO "floating" rating system for alerts? possibility to confirm/reject an existing alert? (implement on web page? do not allow on the mobile app?)<a name="line.167"></a>
-<span class="sourceLineNo">168</span>  // i.e. "alert feedback", also allow users to remove their own alerts directly?<a name="line.168"></a>
-<span class="sourceLineNo">169</span>}<a name="line.169"></a>
+<span class="sourceLineNo">147</span>    return ServiceInitializer.getDAOHandler().getDAO(AlertsDAO.class).addAlert(alert, validGroupIds); // use valid group ids list to remove possible duplicates in the id list  <a name="line.147"></a>
+<span class="sourceLineNo">148</span>  }<a name="line.148"></a>
+<span class="sourceLineNo">149</span><a name="line.149"></a>
+<span class="sourceLineNo">150</span>  /**<a name="line.150"></a>
+<span class="sourceLineNo">151</span>   * <a name="line.151"></a>
+<span class="sourceLineNo">152</span>   * @param file<a name="line.152"></a>
+<span class="sourceLineNo">153</span>   * @return details for the created file or null on failure (permission denied)<a name="line.153"></a>
+<span class="sourceLineNo">154</span>   * @throws IllegalArgumentException on bad data<a name="line.154"></a>
+<span class="sourceLineNo">155</span>   */<a name="line.155"></a>
+<span class="sourceLineNo">156</span>  public static FileDetails createFile(InputStream file) throws IllegalArgumentException {<a name="line.156"></a>
+<span class="sourceLineNo">157</span>    FileDetails details = FilesCore.createFile(file);<a name="line.157"></a>
+<span class="sourceLineNo">158</span>    if(!FileDetails.isValid(details)){<a name="line.158"></a>
+<span class="sourceLineNo">159</span>      throw new IllegalArgumentException("Failed to create file from the given data.");<a name="line.159"></a>
+<span class="sourceLineNo">160</span>    }<a name="line.160"></a>
+<span class="sourceLineNo">161</span>    <a name="line.161"></a>
+<span class="sourceLineNo">162</span>    return details;<a name="line.162"></a>
+<span class="sourceLineNo">163</span>  }<a name="line.163"></a>
+<span class="sourceLineNo">164</span>  <a name="line.164"></a>
+<span class="sourceLineNo">165</span>  //TODO "floating" rating system for alerts? possibility to confirm/reject an existing alert? (implement on web page? do not allow on the mobile app?)<a name="line.165"></a>
+<span class="sourceLineNo">166</span>  // i.e. "alert feedback", also allow users to remove their own alerts directly?<a name="line.166"></a>
+<span class="sourceLineNo">167</span>}<a name="line.167"></a>
 
 
 

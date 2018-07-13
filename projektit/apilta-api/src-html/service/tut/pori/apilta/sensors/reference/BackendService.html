@@ -38,7 +38,7 @@
 <span class="sourceLineNo">030</span>import core.tut.pori.http.parameters.DataGroups;<a name="line.30"></a>
 <span class="sourceLineNo">031</span>import core.tut.pori.http.parameters.InputStreamParameter;<a name="line.31"></a>
 <span class="sourceLineNo">032</span>import core.tut.pori.http.parameters.Limits;<a name="line.32"></a>
-<span class="sourceLineNo">033</span>import core.tut.pori.http.parameters.LongParameter;<a name="line.33"></a>
+<span class="sourceLineNo">033</span>import core.tut.pori.http.parameters.StringParameter;<a name="line.33"></a>
 <span class="sourceLineNo">034</span>import core.tut.pori.utils.XMLFormatter;<a name="line.34"></a>
 <span class="sourceLineNo">035</span>import service.tut.pori.apilta.sensors.datatypes.SensorTask;<a name="line.35"></a>
 <span class="sourceLineNo">036</span><a name="line.36"></a>
@@ -111,12 +111,12 @@
 <span class="sourceLineNo">103</span>  @HTTPServiceMethod(name = service.tut.pori.tasks.Definitions.METHOD_QUERY_TASK_STATUS, acceptedMethods={core.tut.pori.http.Definitions.METHOD_GET})<a name="line.103"></a>
 <span class="sourceLineNo">104</span>  public Response queryTaskStatus(<a name="line.104"></a>
 <span class="sourceLineNo">105</span>      @HTTPAuthenticationParameter(required = false) AuthenticationParameter authenticatedUser,<a name="line.105"></a>
-<span class="sourceLineNo">106</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_TASK_ID) LongParameter taskId,<a name="line.106"></a>
+<span class="sourceLineNo">106</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_TASK_ID) StringParameter taskId,<a name="line.106"></a>
 <span class="sourceLineNo">107</span>      @HTTPMethodParameter(name = DataGroups.PARAMETER_DEFAULT_NAME, required = false) DataGroups dataGroups,<a name="line.107"></a>
 <span class="sourceLineNo">108</span>      @HTTPMethodParameter(name = Limits.PARAMETER_DEFAULT_NAME, required = false) Limits limits<a name="line.108"></a>
 <span class="sourceLineNo">109</span>      )<a name="line.109"></a>
 <span class="sourceLineNo">110</span>  {<a name="line.110"></a>
-<span class="sourceLineNo">111</span>    return new Response(SensorsReferenceCore.generateTaskResults(authenticatedUser.getUserIdentity(), dataGroups, limits, service.tut.pori.apilta.sensors.Definitions.TASK_TYPE_DATA_COLLECT)); // we can simply return pseudo randomly generated task results with hard-coded task type<a name="line.111"></a>
+<span class="sourceLineNo">111</span>    return new Response(SensorsReferenceCore.generateTaskResults(authenticatedUser.getUserIdentity(), dataGroups, limits, taskId.getValue(), service.tut.pori.apilta.sensors.Definitions.TASK_TYPE_DATA_COLLECT)); // we can simply return pseudo randomly generated task results with hard-coded task type<a name="line.111"></a>
 <span class="sourceLineNo">112</span>  }<a name="line.112"></a>
 <span class="sourceLineNo">113</span>}<a name="line.113"></a>
 

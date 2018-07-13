@@ -120,12 +120,12 @@
 <span class="sourceLineNo">112</span>   */<a name="line.112"></a>
 <span class="sourceLineNo">113</span>  @HTTPServiceMethod(name = service.tut.pori.apilta.alerts.Definitions.METHOD_CREATE_FILE, acceptedMethods={core.tut.pori.http.Definitions.METHOD_POST})<a name="line.113"></a>
 <span class="sourceLineNo">114</span>  public Response createFile (<a name="line.114"></a>
-<span class="sourceLineNo">115</span>      @HTTPAuthenticationParameter AuthenticationParameter authenticatedUser,<a name="line.115"></a>
+<span class="sourceLineNo">115</span>      @SuppressWarnings("unused") @HTTPAuthenticationParameter AuthenticationParameter authenticatedUser,<a name="line.115"></a>
 <span class="sourceLineNo">116</span>      @HTTPMethodParameter(name = InputStreamParameter.PARAMETER_DEFAULT_NAME, bodyParameter = true) InputStreamParameter file<a name="line.116"></a>
 <span class="sourceLineNo">117</span>      ) <a name="line.117"></a>
 <span class="sourceLineNo">118</span>  {<a name="line.118"></a>
 <span class="sourceLineNo">119</span>    FileDetailsList list = new FileDetailsList();<a name="line.119"></a>
-<span class="sourceLineNo">120</span>    list.addFile(AlertsCore.createFile(authenticatedUser.getUserIdentity(), file.getValue()));<a name="line.120"></a>
+<span class="sourceLineNo">120</span>    list.addFile(AlertsCore.createFile(file.getValue()));<a name="line.120"></a>
 <span class="sourceLineNo">121</span>    return new Response(list);<a name="line.121"></a>
 <span class="sourceLineNo">122</span>  }<a name="line.122"></a>
 <span class="sourceLineNo">123</span>}<a name="line.123"></a>

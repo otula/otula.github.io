@@ -174,7 +174,7 @@
 <span class="sourceLineNo">166</span>  @HTTPServiceMethod(name = service.tut.pori.apilta.sensors.Definitions.METHOD_GET_MEASUREMENTS, acceptedMethods={core.tut.pori.http.Definitions.METHOD_GET})<a name="line.166"></a>
 <span class="sourceLineNo">167</span>  public Response getMeasurements(<a name="line.167"></a>
 <span class="sourceLineNo">168</span>      @HTTPAuthenticationParameter(required = false) AuthenticationParameter authenticatedUser,<a name="line.168"></a>
-<span class="sourceLineNo">169</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_TASK_ID) LongParameter taskId,<a name="line.169"></a>
+<span class="sourceLineNo">169</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_TASK_ID) StringParameter taskId,<a name="line.169"></a>
 <span class="sourceLineNo">170</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_BACKEND_ID, required = false) LongParameter backendIdFilter,<a name="line.170"></a>
 <span class="sourceLineNo">171</span>      @HTTPMethodParameter(name = service.tut.pori.tasks.Definitions.PARAMETER_CREATED, required = false) DateIntervalParameter createdFilter,<a name="line.171"></a>
 <span class="sourceLineNo">172</span>      @HTTPMethodParameter(name = DataGroups.PARAMETER_DEFAULT_NAME, required = false) DataGroups dataGroups,<a name="line.172"></a>
@@ -182,7 +182,7 @@
 <span class="sourceLineNo">174</span>      @HTTPMethodParameter(name = service.tut.pori.apilta.sensors.Definitions.PARAMETER_MEASUREMENT_ID, required = false) StringParameter measurementIdFilter<a name="line.174"></a>
 <span class="sourceLineNo">175</span>      )<a name="line.175"></a>
 <span class="sourceLineNo">176</span>  {<a name="line.176"></a>
-<span class="sourceLineNo">177</span>    return new Response(SensorsReferenceCore.getMeasurements(authenticatedUser.getUserIdentity(), backendIdFilter.getValues(), createdFilter.getValues(), dataGroups, limits, measurementIdFilter.getValues()));<a name="line.177"></a>
+<span class="sourceLineNo">177</span>    return new Response(SensorsReferenceCore.getMeasurements(authenticatedUser.getUserIdentity(), backendIdFilter.getValues(), createdFilter.getValues(), dataGroups, limits, measurementIdFilter.getValues(), taskId.getValues()));<a name="line.177"></a>
 <span class="sourceLineNo">178</span>  }<a name="line.178"></a>
 <span class="sourceLineNo">179</span>}<a name="line.179"></a>
 

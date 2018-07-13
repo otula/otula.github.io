@@ -10,6 +10,3 @@ service.tut.pori.apilta.sensors.reference
 service.tut.pori.apilta.shock
 service.tut.pori.apilta.shock.datatypes
 service.tut.pori.apilta.utils
-service.tut.pori.fuzzysensors
-service.tut.pori.fuzzysensors.backend
-service.tut.pori.fuzzysensors.frontend
